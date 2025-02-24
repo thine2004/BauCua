@@ -66,7 +66,7 @@ document.getElementById("resetGame").addEventListener("click", () => {
     // Đặt lại toàn bộ ô cược về 0
     let bets = document.querySelectorAll(".bet-amount");
     bets.forEach(bet => {
-        bet.value = "";
+        bet.value = "0";
     });
 
     // Xóa thông báo kết quả
