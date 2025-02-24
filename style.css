@@ -1,3 +1,47 @@
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+h1 {
+    color: #007BFF;
+}
+
+.money {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.game-container {
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    transition: background 0.5s;
+}
+
+.dice-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.dice {
+    width: 80px;
+    height: 80px;
+    margin: 5px;
+    animation: none;
+}
+
+@keyframes rollDice {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(720deg); }
+}
+
 @keyframes winEffect {
     0% { background: url('images/girls.gif') center/cover no-repeat; filter: brightness(1); }
     50% { filter: brightness(1.5); }
@@ -16,4 +60,49 @@
 
 .lose-background {
     animation: loseEffect 1.5s ease-in-out;
+}
+
+.betting-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.betting-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.betting-option img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 5px;
+}
+
+.bet-amount {
+    width: 50px;
+    text-align: center;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
 }
