@@ -4,7 +4,6 @@ let playerMoney = localStorage.getItem("playerMoney") ? parseInt(localStorage.ge
 document.getElementById("money").innerText = playerMoney;
 
 document.getElementById("rollDice").addEventListener("click", () => {
-    let gameContainer = document.getElementById("gameContainer");
     let bets = document.querySelectorAll(".bet-amount");
     let totalBet = 0;
     let betAmounts = {};
@@ -36,8 +35,8 @@ document.getElementById("rollDice").addEventListener("click", () => {
         document.getElementById("dice3").src = `images/${dice3}.png`;
 
         let results = [dice1, dice2, dice3];
-        let winnings = 0;
 
+        let winnings = 0;
         for (let bet in betAmounts) {
             if (results.includes(bet)) {
                 let count = results.filter(r => r === bet).length;
@@ -50,12 +49,10 @@ document.getElementById("rollDice").addEventListener("click", () => {
 
         if (winnings > 0) {
             document.getElementById("winSound").play();
-            gameContainer.classList.add("win-background");
-            setTimeout(() => gameContainer.classList.remove("win-background"), 1500);
+            document.getElementById("gameContainer").style.animation = "winEffect 0.5s";
         } else {
             document.getElementById("loseSound").play();
-            gameContainer.classList.add("lose-background");
-            setTimeout(() => gameContainer.classList.remove("lose-background"), 1500);
+            document.getElementById("gameContainer").style.animation = "loseEffect 0.5s";
         }
 
     }, 500);
