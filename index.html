@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bầu Cua Offline</title>
+    <title>Bầu Cua Online</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Game Bầu Cua</h1>
     <div class="money">Số tiền: <span id="money">1000</span> xu</div>
 
-    <div class="game-container">
+    <div class="game-container" id="gameContainer">
         <div class="dice-container">
             <img id="dice1" src="images/question.png" alt="Xúc xắc 1" class="dice">
             <img id="dice2" src="images/question.png" alt="Xúc xắc 2" class="dice">
@@ -50,6 +50,8 @@
     </div>
 
     <audio id="diceSound" src="sounds/dice-roll.mp3"></audio>
+    <audio id="winSound" src="sounds/win.mp3"></audio>
+    <audio id="loseSound" src="sounds/lose.mp3"></audio>
 
     <script src="script.js"></script>
 </body>
