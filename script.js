@@ -25,16 +25,11 @@ document.getElementById("rollDice").addEventListener("click", () => {
 
     document.getElementById("diceSound").play();
 
-    let diceElements = document.querySelectorAll(".dice");
-    diceElements.forEach(dice => {
-        dice.style.animation = "rollDice 0.5s ease-in-out";
-    });
+    let dice1 = diceImages[Math.floor(Math.random() * 6)];
+    let dice2 = diceImages[Math.floor(Math.random() * 6)];
+    let dice3 = diceImages[Math.floor(Math.random() * 6)];
 
     setTimeout(() => {
-        let dice1 = diceImages[Math.floor(Math.random() * 6)];
-        let dice2 = diceImages[Math.floor(Math.random() * 6)];
-        let dice3 = diceImages[Math.floor(Math.random() * 6)];
-
         document.getElementById("dice1").src = `images/${dice1}.png`;
         document.getElementById("dice2").src = `images/${dice2}.png`;
         document.getElementById("dice3").src = `images/${dice3}.png`;
@@ -52,17 +47,15 @@ document.getElementById("rollDice").addEventListener("click", () => {
         playerMoney += winnings;
         updateMoney();
 
-        document.getElementById("result").innerText = winnings > 0 ? `Bạn thắng ${winnings} xu!` : "Bạn thua cược!";
+        if (winnings > 0) {
+            document.getElementById("winSound").play();
+            document.getElementById("gameContainer").style.animation = "winEffect 0.5s";
+        } else {
+            document.getElementById("loseSound").play();
+            document.getElementById("gameContainer").style.animation = "loseEffect 0.5s";
+        }
 
-        diceElements.forEach(dice => {
-            dice.style.animation = "none";
-        });
     }, 500);
-});
-
-document.getElementById("resetGame").addEventListener("click", () => {
-    playerMoney = 1000;
-    updateMoney();
 });
 
 function updateMoney() {
