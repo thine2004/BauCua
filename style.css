@@ -37,22 +37,64 @@ h1 {
     animation: none;
 }
 
+@keyframes rollDice {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(720deg); }
+}
+
 @keyframes winEffect {
-    0% { background: url('images/girls.gif') center/cover no-repeat; filter: brightness(1); }
-    50% { filter: brightness(1.5); }
-    100% { filter: brightness(1); }
+    0% { background: white; }
+    50% { background: lightgreen; }
+    100% { background: white; }
 }
 
 @keyframes loseEffect {
-    0% { background: url('images/girls.gif') center/cover no-repeat; filter: brightness(1); }
-    50% { filter: brightness(0.5); }
-    100% { filter: brightness(1); }
+    0% { background: white; }
+    50% { background: lightcoral; }
+    100% { background: white; }
 }
 
-.win-background {
-    animation: winEffect 1.5s ease-in-out;
+.betting-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
-.lose-background {
-    animation: loseEffect 1.5s ease-in-out;
+.betting-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.betting-option img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 5px;
+}
+
+.bet-amount {
+    width: 50px;
+    text-align: center;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
 }
