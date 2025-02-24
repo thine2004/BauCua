@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bầu Cua Online</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Game Bầu Cua</h1>
+    <div class="money">Số tiền: <span id="money">1000</span> xu</div>
+
+    <div class="game-container" id="gameContainer">
+        <div class="dice-container">
+            <img id="dice1" src="images/question.png" alt="Xúc xắc 1" class="dice">
+            <img id="dice2" src="images/question.png" alt="Xúc xắc 2" class="dice">
+            <img id="dice3" src="images/question.png" alt="Xúc xắc 3" class="dice">
+        </div>
+
+        <div class="betting-container">
+            <div class="betting-option" data-bet="bau">
+                <img src="images/bau.png" alt="Bầu">
+                <input type="number" min="0" value="0" class="bet-amount">
+            </div>
+            <div class="betting-option" data-bet="cua">
+                <img src="images/cua.png" alt="Cua">
+                <input type="number" min="0" value="0" class="bet-amount">
+            </div>
+            <div class="betting-option" data-bet="tom">
+                <img src="images/tom.png" alt="Tôm">
+                <input type="number" min="0" value="0" class="bet-amount">
+            </div>
+            <div class="betting-option" data-bet="ca">
+                <img src="images/ca.png" alt="Cá">
+                <input type="number" min="0" value="0" class="bet-amount">
+            </div>
+            <div class="betting-option" data-bet="nai">
+                <img src="images/nai.png" alt="Nai">
+                <input type="number" min="0" value="0" class="bet-amount">
+            </div>
+            <div class="betting-option" data-bet="ga">
+                <img src="images/ga.png" alt="Gà">
+                <input type="number" min="0" value="0" class="bet-amount">
+            </div>
+        </div>
+
+        <button id="rollDice">Lắc Xúc Xắc</button>
+        <button id="resetGame">Chơi lại</button>
+        <div id="result"></div>
+    </div>
+
+    <audio id="diceSound" src="sounds/dice-roll.mp3"></audio>
+    <audio id="winSound" src="sounds/win.mp3"></audio>
+    <audio id="loseSound" src="sounds/lose.mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
