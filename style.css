@@ -43,16 +43,17 @@ h1 {
 }
 
 @keyframes winEffect {
-    0% { background: white; }
-    50% { background: lightgreen; }
-    100% { background: white; }
+    0% { background: url('images/girls.gif') center/cover no-repeat; filter: brightness(1); }
+    50% { filter: brightness(1.5); }
+    100% { filter: brightness(1); }
 }
 
 @keyframes loseEffect {
-    0% { background: white; }
-    50% { background: lightcoral; }
-    100% { background: white; }
+    0% { background: url('images/girls.gif') center/cover no-repeat; filter: brightness(1); }
+    50% { filter: brightness(0.5); }
+    100% { filter: brightness(1); }
 }
+
 
 .betting-container {
     display: grid;
